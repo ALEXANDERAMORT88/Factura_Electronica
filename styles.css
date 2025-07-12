@@ -1,0 +1,111 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-predetirminado:#425EEB;
+}
+
+.info_contacto {
+    height: 50px;
+    background-color: var(--color-predetirminado);
+    display: grid;
+    justify-content: end;
+    align-items: center;
+    color: aliceblue;
+}
+
+.contenido_contacto {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding-right: 15px;
+} 
+
+.selector {
+    width: 130px;
+    background-color: transparent;
+    color: aliceblue;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 2px 25px;
+}
+
+.boton_clientes{
+    width: 130px;
+}
+
+.img_logo {
+    height: 40px;
+}
+
+.info_navbar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px 25px;
+}
+
+.info_navbar_funcionalidades{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.inf_sesion{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: end;
+    justify-items: end;
+    align-items: center;
+}
+
+.img_fondo_asesoria{
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    background-image: url('./img/img\ fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    display: grid;
+    align-items: center;
+    justify-items: end;
+    padding: 0 100px 0 0;
+
+}
+
+.formulario_asesoria{
+    width: 350px;
+    height: 350px;
+    border-radius: 8px;
+    display: grid;
+    justify-items: center;
+    background-color: var(--color-predetirminado);
+}
+
+
+h2{
+    height: 55px;
+    padding: 55px 0 0 0;
+}
+
+.formulario{
+    display: grid;
+    grid-template-rows: repeat(4,1fr);
+    gap: 10px;
+}
+
+.formulario input, select{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 0 0 16px;
+}
+
+
