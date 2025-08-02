@@ -13,9 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let nombreUsuario = nombreUsuarioFormulario.value;
         let contraseñaUsuario = contraseña_ingreso.value;
 
-        if (guardarUsuario !== null) {
-            localStorage.setItem('nombreUsuario', nombreUsuario);
-            localStorage.setItem('contraseñaUsuario', contraseñaUsuario);
+        if (guardarUsuario !== null && guardarContraseña !== null) {
 
             if ((guardarUsuario === nombreUsuario) && (guardarContraseña === contraseñaUsuario)) {
                 window.location.href = '../../index.html'

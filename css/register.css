@@ -9,6 +9,10 @@
     --color-predetirminado:#425EEB;
 }
 
+.d-none {
+    display: none;
+}
+
 .info_contacto {
     height: 50px;
     background-color: var(--color-predetirminado);
