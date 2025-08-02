@@ -1,12 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./login.html">
+    <link rel="stylesheet" href="../css/login_page.css">
     <title>Login</title>
 </head>
+
 <body>
-    
+
+    <header class="contenedor">
+
+        <section class="publicidad">
+            <img class="img_publicidad" src="../img/Publicidad login.avif" alt="">
+
+        </section>
+
+        <section class="login">
+            <form class="formulario" id="formulario_ingreso" action="">
+                <h2>Iniciar Sesión</h2>
+                <span>Aún no tienes una cuenta <a href="">Créala aquí</a></span>
+                <input id="nombreUsuarioFormulario" type="text" placeholder="Usuario" required>
+                <input id="contraseña_ingreso" type="password" placeholder="Contraseña" required>
+                <a href="">¿Olvidaste tu contraseña?</a>
+                <button type="submit" id="boton_ingreso">Ingresar</button>
+            </form>
+        </section>
+
+    </header>
+
+    <script src="../js/page_js/login.js"></script>
+
 </body>
+
 </html>
