@@ -4,8 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const nombreUsuarioFormulario = document.getElementById('nombreUsuarioFormulario');
     const contraseña_ingreso = document.getElementById('contraseña_ingreso');
 
-    const boton_ingreso = document.getElementById('boton_ingreso');
-
     formulario_ingreso.addEventListener('submit', function (event) {
         event.preventDefault()
 
@@ -23,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 window.location.href = '../../index.html'
             } else {
                 alert('El nombre o la contraseña no coinciden');
-
             }
         } else {
             alert('El usuario no esra registrado, por favor registase primero');
