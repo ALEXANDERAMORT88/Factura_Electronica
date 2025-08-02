@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 :root{
@@ -55,6 +56,28 @@
     grid-template-columns: repeat(5,1fr);
     justify-items: center;
     align-items: center;
+}
+
+.btn_inicio,
+.planes,
+.producto,
+.software {
+    background-color: transparent;
+    /* border: 1px solid black; */
+    color: black;
+    width: 132px;
+    height: 35px;
+    text-align: center;
+    padding: 7px 0;
+    font-weight:bold ;
+    cursor: pointer;
+}
+
+.btn_inicio:hover,
+.planes:hover,
+.producto:hover,
+.software:hover {
+    color: var(--color-predetirminado);
 }
 
 .inf_sesion{
