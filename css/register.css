@@ -10,7 +10,7 @@
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 .info_contacto {
@@ -83,4 +83,15 @@
     justify-content: end;
     justify-items: end;
     align-items: center;
+}
+
+.contendor_creando_cuenta {
+    display: grid;
+    grid-template-columns: 600px 600px;
+    justify-content: center;   
+}
+
+.contenedor_info_compra {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 }

@@ -1,125 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../css/register.css" />
-    <title>Registrarce</title>
-  </head>
 
-  <body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../css/register.css" />
+  <title>Registrarce</title>
+</head>
 
-    <!-- Inicio de nabvar donde vemos informacion de contacto, paises -->
-    <nav class="info_contacto">
-      <div class="contenido_contacto">
-        <select class="selector" name="" id="">
-          <option value="">Colombia</option>
-          <option value="">Canada</option>
-          <option value="">Francia</option>
-        </select>
+<body>
 
-        <div class="boton_clientes">Portal Clientes</div>
-        <div class="boton_contacto">Contacto +57 300786****</div>
-      </div>
-    </nav>
-    <!-- Fin de nabvar -->
+  <!-- Inicio de la barra de navegacón para la sección de información de contacto -->
+  <nav class="info_contacto">
+    <!-- Contenedor principal que agrupa los elementos de contacto -->
+    <div class="contenido_contacto">
+      <!-- Menú desplegable para selecionar un país -->
+      <select class="selector" name="" id="">
+        <option value="">Colombia</option>
+        <option value="">Canada</option>
+        <option value="">Francia</option>
+      </select>
+      <!-- Botones o enlace hacia el portal de cliente, número de contacto  -->
+      <div class="boton_clientes">Portal Clientes</div>
+      <div class="boton_contacto">Contacto +57 300786****</div>
+    </div>
+  </nav>
+  <!-- Fin del contenedor principal -->
 
-    <section class="info_navbar">
-      <div class="info_navbar_funcionalidades">
-        <img class="img_logo" src="./img/colombia.png" alt="" />
-        <div class="btn_inicio">Inicio</div>
-        <div class="planes">Planes y precios</div>
-        <div class="producto">Productos</div>
-        <div class="software">Por que Software</div>
-      </div>
+  <!-- Inicio de contenedor informacion  -->
+  <section class="info_navbar">
+    <!-- Contenedor para el registro de información -->
+    <div class="info_navbar_funcionalidades">
+      <!-- logo, y botones de información. -->
+      <img class="img_logo" src="./img/colombia.png" alt="" />
+      <div class="btn_inicio">Inicio</div>
+      <div class="planes">Planes y precios</div>
+      <div class="producto">Productos</div>
+      <div class="software">Por que Software</div>
+    </div>
+    <!-- Botones de para acceder a recursos y inicio de sessión -->
+    <div class="inf_sesion">
+      <div class="one">recursos</div>
+      <div>iniciar sesion</div>
+    </div>
 
-      <div class="inf_sesion">
-        <div class="one">recursos</div>
-        <div>iniciar sesion</div>
+  </section>
+  <!-- Fin de contenedor  de recursos-->
+
+  <section class="ifo_precios">
+
+    <h1>Optimiza tus finanzas con soluciones que se ajustan a tu presupuesto y metas empresariales.</h1>
+    <h3>Planes flexibles, precios justos y resultados reales.</h3>
+
+    <div class="contenedor_de_opciones">
+      <button>Facturación Electrónica</button>
+      <button>Sistema POS + Facturación</button>
+      <button>Nomina Electrónica</button>
+      <button>Software Administrativo</button>
+      <button>Software Contable</button>
+    </div>
+
+  </section>
+
+  <section class="contenedor_opciones">
+
+    <div class="paso_a_paso">
+
+    </div>
+
+    <section class="facturacion" id="contendor_de_seleccion">
+      <h1>Factura electrónica</h1>
+      <h2>Olvídate de lo complejo: factura fácil, seguro y con apoyo cuando lo necesites y es ilimitado</h2>
+
+      <div class="contenedor_opciones_compra">
+
+        <span class="gratis">
+          <h3>Facturación electrónica</h3>
+          <h4>GRATIS</h4>
+          <button>Empiza a usarlo</button>
+        </span>
+
+        <span class="mas_popular">
+          <h3>Facturación electrónica <br> 24</h3>
+          <h4>$ 9.075 / mes*</h4>
+          <h4> $ 108.900 / año</h4>
+          <button id="boton_compra">¡Compralo ahora!</button>
+        </span>
+
+        <span class="whatsApp"></span>
       </div>
     </section>
 
-    <section class="ifo_precios">
 
-      <h1>Optimiza tus finanzas con soluciones que se ajustan a tu presupuesto y metas empresariales.</h1>
-      <h3>Planes flexibles, precios justos y resultados reales.</h3>
+    <section class="contendor_creando_cuenta d-none" id="contenedor_registro">
 
-      <div class="contenedor_de_opciones">
-        <button>Facturación Electrónica</button>
-        <button>Sistema POS + Facturación</button>
-        <button>Nomina Electrónica</button>
-        <button>Software Administrativo</button>
-        <button>Software Contable</button>
+      <div class="contenedor_formulario_registro">
+
+        <button id="boton_regresar">Regresar</button>
+
+        <form id="formulario_registro" action="">
+          <h2>Creando tu cuenta</h2>
+          <p>Da el primer paso hacia el crecimiento de tu negocio: ingresa tus datos y explora todo lo que tiene para
+            ti.
+          </p>
+
+          <div class="contenedor_info_compra">
+
+            <select>
+              <option value="">Tipo Documento</option>
+              <option value="">Cédula de ciudadanía</option>
+              <option value="">NIT</option>
+              <option value="">Pasaporte</option>
+              <option value="">Cédula Extranjería</option>
+              <option value="">RUT</option>
+            </select>
+
+            <input id="numero_identificacion" type="number" placeholder="Número de documento">
+            <input id="nombre_usuario" type="text" placeholder="Nombres y Apellidos">
+            <input id="numero_celular" type="text" placeholder="Celular">
+            <input id="email_usuario" type="email" placeholder="E-mail">
+            <input id="confirmacion_email" type="text" placeholder="Confirmar e-mail">
+            <input id="contraseña_usuario" type="password" placeholder="Contraseña">
+            <input id="confirmacion_contraseña" type="password" placeholder="Confirmar contraeña">
+
+          </div>
+
+          <button type="submit">Crea tu cuenta</button>
+
+        </form>
+
       </div>
 
-    </section>
+      <div class="info_resumen">
 
-    <section class="contenedor_opciones">
+        <h2>Resumen de compra</h2>
 
-        <div class="paso_a_paso">
+        <span>Facturación electrónica</span>
 
-        </div>
-
-        <section class="facturacion" id="contendor_de_seleccion">
-            <h1>Factura electrónica</h1>
-            <h2>Olvídate de lo complejo: factura fácil, seguro y con apoyo cuando lo necesites y es ilimitado</h2>
-
-            <div class="contenedor_opciones_compra">
-
-                <span class="gratis">
-                    <h3>Facturación electrónica</h3>
-                    <h4>GRATIS</h4>
-                    <button>Empiza a usarlo</button>
-                </span>
-
-                <span class="mas_popular">
-                    <h3>Facturación electrónica <br> 24</h3>
-                    <h4>$ 9.075 / mes*</h4>
-                    <h4> $ 108.900 / año</h4>
-                    <button id="boton_compra">¡Compralo ahora!</button>
-                </span>
-
-                <span class="whatsApp"></span>
-            </div>
-        </section>
+      </div>
 
 
-        <section class="formulario_registro d-none" id="contenedor_registro">
 
-            <button id="boton_regresar">Regresar</button>
 
-            <form id="formulario_registro" action="">
-                <h2>Creando tu cuenta</h2>
-                <p>Da el primer paso hacia el crecimiento de tu negocio: ingresa tus datos y explora todo lo que tiene para ti.</p>
-
-                <div class="contenedor_info_compra">
-
-                    <select>
-                        <option value="">Tipo Documento</option>
-                        <option value="">Cédula de ciudadanía</option>
-                        <option value="">NIT</option>
-                        <option value="">Pasaporte</option>
-                        <option value="">Cédula Extranjería</option>
-                        <option value="">RUT</option>
-                    </select>
-
-                    <input id="numero_identificacion" type="number" placeholder="Número de documento">
-                    <input id="nombre_usuario" type="text" placeholder="Nombres y Apellidos">
-                    <input id="numero_celular" type="text" placeholder="Celular">
-                    <input id="email_usuario" type="email" placeholder="E-mail">
-                    <input id="confirmacion_email" type="text" placeholder="Confirmar e-mail">
-                    <input id="contraseña_usuario" type="password" placeholder="Contraseña">
-                    <input id="confirmacion_contraseña" type="password" placeholder="Confirmar contraeña">
-                    
-                </div>
-                <button type="submit">Crea tu cuenta</button>
-
-            </form>
-        </section>
 
     </section>
 
+  </section>
 
-    <script src="../js/page_js/register.js"></script>
-  </body>
+
+  <script src="../js/page_js/register.js"></script>
+</body>
+
 </html>

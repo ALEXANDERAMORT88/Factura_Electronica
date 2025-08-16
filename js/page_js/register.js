@@ -28,34 +28,67 @@ document.addEventListener('DOMContentLoaded', function () {
         contenedor_registro.classList.add('d-none');
     });
 
-    formulario_registro.addEventListener('submit', function (event) {
-        event.preventDefault()
+    // Creamos una funcion el cual no va ayudar a manejar el evento para manejar el envio de la informacion del formulario y guardarlo en MongoDB.
+  formulario_registro.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-        let saveNumeroIdentificaion = numero_identificacion.value;
-        let nombreUsuario = nombre_usuario.value;
-        let saveNumeroCelular = numero_celular.value;
-        let saveEmailUsuario = email_usuario.value;
-        let saveConfirmacionEmail = confirmacion_email.value;
-        let contraseñaUsuario = contraseña_usuario.value
-        let saveConfirmacionContraseña = confirmacion_contraseña.value
+    let saveNumeroIdentificacion = numero_identificacion.value;
+    let nombreUsuario = nombre_usuario.value;
+    let saveNumeroCelular = numero_celular.value;
+    let saveEmailUsuario = email_usuario.value;
+    let saveConfirmacionEmail = confirmacion_email.value;
+    let contraseñaUsuario = contraseña_usuario.value;
+    let saveConfirmacionContraseña = confirmacion_contraseña.value;
 
-        if (saveEmailUsuario !== saveConfirmacionEmail) {
-            alert("Los correos electronicos no coinciden");
-            return
-        }
-        if (contraseñaUsuario !== saveConfirmacionContraseña) {
-            alert("las contraseñas no coiciden")
-            return; 
-        }
+// función para marcar el error
+    function marcarError(campo) {
+        campo.style.border = '1px solid red';
+        campo.style.borderRadius = '5px';
+    }
 
-        localStorage.setItem('saveNumeroIdentificaion', saveNumeroIdentificaion);
-        localStorage.setItem('nombreUsuario', nombreUsuario);
-        localStorage.setItem('saveNumeroCelular', saveNumeroCelular);
-        localStorage.setItem('contraseñaUsuario', contraseñaUsuario);        
-        localStorage.setItem('saveEmailUsuario', saveEmailUsuario);
+    function limpiarError(campo) {
+        campo.style.border = '';
+    }
 
-        window.location.href = '../../pages/generar_factura.html'
-    })
+    // limpiar errores antes de validar 
+    [numero_identificacion, nombre_usuario, numero_celular, email_usuario,, confirmacion_email, contraseña_usuario, confirmacion_contraseña].forEach(campo => limpiarError(campo));
 
+    let hayError = false;
 
+// Validar campos vacíos
+    if (!saveNumeroIdentificacion) { marcarError(numero_identificacion); hayError = true; }
+    if (!nombreUsuario) { marcarError(nombre_usuario); hayError = true; }
+    if (!saveNumeroCelular) { marcarError(numero_celular); hayError = true; }
+    if (!saveEmailUsuario) { marcarError(email_usuario); hayError = true; }
+    if (!saveConfirmacionEmail) { marcarError(confirmacion_email); hayError = true; }
+    if (!contraseñaUsuario) { marcarError(contraseña_usuario); hayError = true; }
+    if (!saveConfirmacionContraseña) { marcarError(confirmacion_contraseña); hayError = true; }
+
+    if (hayError) {
+      alert("Por favor completa todos los campos");
+      return;
+    }
+// Valicdar correos 
+    if (saveEmailUsuario !== saveConfirmacionEmail) {
+        marcarError(email_usuario);
+        marcarError(confirmacion_email)
+      alert("Los correos electronicos no coinciden");
+      return;
+    }
+// Validar contraseña
+    if (contraseñaUsuario !== saveConfirmacionContraseña) {
+        marcarError(contraseña_usuario);
+        marcarError(confirmacion_contraseña)
+      alert("las contraseñas no coiciden");
+      return;
+    }
+
+    localStorage.setItem("saveNumeroIdentificaion", saveNumeroIdentificaion);
+    localStorage.setItem("nombreUsuario", nombreUsuario);
+    localStorage.setItem("saveNumeroCelular", saveNumeroCelular);
+    localStorage.setItem("contraseñaUsuario", contraseñaUsuario);
+    localStorage.setItem("saveEmailUsuario", saveEmailUsuario);
+
+    window.location.href = "../../pages/generar_factura.html";
+  });
 })
