@@ -83,6 +83,8 @@ document.addEventListener('DOMContentLoaded', function () {
       return;
     }
 
+    
+
     localStorage.setItem("saveNumeroIdentificaion", saveNumeroIdentificaion);
     localStorage.setItem("nombreUsuario", nombreUsuario);
     localStorage.setItem("saveNumeroCelular", saveNumeroCelular);
