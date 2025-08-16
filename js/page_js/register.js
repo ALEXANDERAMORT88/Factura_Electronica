@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // limpiar errores antes de validar 
-    [numero_identificacion, nombre_usuario, numero_celular, email_usuario,, confirmacion_email, contraseña_usuario, confirmacion_contraseña].forEach(campo => limpiarError(campo));
+    [numero_identificacion, nombre_usuario, numero_celular, email_usuario, confirmacion_email, contraseña_usuario, confirmacion_contraseña].forEach(campo => limpiarError(campo));
 
     let hayError = false;
 
