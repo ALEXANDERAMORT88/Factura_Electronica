@@ -105,10 +105,13 @@
 .formulario_asesoria{
     width: 350px;
     height: 350px;
+    background-color: #fafbfd;
+    /* border: 2px solid grey; */
     border-radius: 8px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     display: grid;
     justify-items: center;
-    background-color: var(--color-predetirminado);
+
 }
 
 
@@ -120,7 +123,6 @@ h2{
 .formulario{
     display: grid;
     grid-template-rows: repeat(4,1fr);
-    gap: 10px;
 }
 
 .formulario input, select{
