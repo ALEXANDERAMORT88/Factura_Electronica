@@ -1,23 +1,24 @@
+/* Aqui reiniciamos los estilos que estan por defecto de los elementos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+/* Creamos variables para determinar colores que serián reutilizables */
 :root{
     --color-predetirminado:#425EEB;
 }
-
+/* Damos estilos a la barra de navegación superior*/
 .info_contacto {
     height: 50px;
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-predetirminado); /*Usos de la variable global*/
     display: grid;
     justify-content: end;
     align-items: center;
     color: aliceblue;
 }
-
+/* Contenedor que agrupa los elementos de contacto dentro de la barra*/
 .contenido_contacto {
     display: grid;
     grid-auto-flow: column;
@@ -26,7 +27,7 @@
     gap: 10px;
     padding-right: 15px;
 } 
-
+/* Estilos al menú desplegable de la selección de país */
 .selector {
     width: 130px;
     background-color: transparent;
@@ -57,7 +58,7 @@
     justify-items: center;
     align-items: center;
 }
-
+/* Estilos a los botones de información */
 .btn_inicio,
 .planes,
 .producto,
@@ -101,7 +102,7 @@
     padding: 0 100px 0 0;
 
 }
-
+/* Estilos al formulario de solicitud de información */
 .formulario_asesoria{
     width: 350px;
     height: 350px;
@@ -111,7 +112,6 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     display: grid;
     justify-items: center;
-
 }
 
 
