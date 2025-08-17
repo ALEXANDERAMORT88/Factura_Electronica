@@ -1,6 +1,7 @@
 import express from "express";
 import ZodClienteSchema from "../schemas/clilente.shema.js";
-import Cliente from "../model/cliente.model.js";
+import crearCliente  from "../controllers/clilente.controllers.js";
+
 import { z } from 'zod';
 
 // Creamos una constante par apoder usar un manejador de rutas
@@ -35,40 +36,8 @@ router.get("/:id", async (req, res) => {
 });
 
 // Ruta POST para registrar un nuevo cliente en la base de datos
-router.post("/", async (req, res) => {
-  try {
-    const validarDatos = ZodClienteSchema.safeParse(req.body);
+router.post("/",crearCliente );
 
-    if (!validarDatos.success) {
-      console.error("Error de validacion Zod", validarDatos.error.errors);
-      return res.status(400).json({
-        message: "Error en la validacion de datos",
-        errores: validarDatos.error.errors,
-      });
-    }
-
-    // Se crea una nueva instancia del esquema Cliente a partir de los datos recibidos en la solicitud (req.body)
-    const nuevoCliente = new Cliente(validarDatos.data);
-
-    // Guardamos en una constante para enviarlo a BD
-    const guardarCliente = await nuevoCliente.save();
-    res.status(201).json({
-      message: "Cliente creado exitosamente ✅",
-      cliente: guardarCliente,
-    });
-    console.log("Creando cliente 🤗");
-  } catch (error) {
-    // if (error instanceof z.ZodError) {
-    //     console.error("Error de validacion Zod", error.errors);
-    //     return res.status(400).json({
-    //         message: 'Error en la validacion de datos',
-    //         errores: error.errors
-    //     })
-    // }
-    console.error("Error al actualizar el cliente", error);
-    res.status(500).json({ message: "Error interno del servidor" });
-  }
-});
 
 // Ruta DELETE nos permite eliminar un cliente segun su ID.
 router.delete("/:id", async (req, res) => {

@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Validar contraseña
     if (contraseñaUsuario !== saveConfirmacionContraseña) {
-      marcarError(contraseña_usuario);
+      marcarError(contrasena_usuario);
       marcarError(confirmacion_contraseña);
       alert("las contraseñas no coiciden");
       return;
