@@ -1,0 +1,11 @@
+POST http://localhost:5000/clientes
+Content-Type: application/json
+
+{
+    "tipoDocumento": "CC",
+    "numero_identificacion": "987654321",
+    "nombre_usuario": "tefy",
+    "numero_celular": "3007861235",
+    "email_usuario": "vivi@gmail.com",
+    "contraseña_usuario": "Aa123456788"
+}

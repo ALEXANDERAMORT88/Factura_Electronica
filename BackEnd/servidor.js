@@ -4,6 +4,9 @@ import express from 'express'
 import dotenv from 'dotenv'
 // 3. Nos permite conectar y trabajar con MongoDB usando esquemas y modelos.
 import mongoose from 'mongoose'
+// 4. Importar el middleware CORS
+import cors from 'cors'
+
 import router from './routes/cliente.route.js'
 
 // Carga las variables del archivo .env
@@ -13,10 +16,11 @@ dotenv.config()
 const app = express()
 
 //Desabilitamos el header, por temas de seguridad. 
-app.disable('xpowered-by')
+app.disable('x-powered-by')
 
 // Creamos Middleware y rutas. 
 app.use(express.json())
+app.use(cors()) //Esto nos permite todas las solicitudes CORS. 
 app.use('/clientes', router)
 
 // Vamos a crear un puerto para levantar el servidor.
