@@ -1,0 +1,105 @@
+/* Aqui reiniciamos los estilos que estan por defecto de los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --color-predetirminado: #425EEB;
+}
+
+.contenedor_panel {
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+        'sidebar header'
+        'sidebar main';
+}
+
+.opcion_de_navegacion {
+    grid-area: sidebar;
+    width: 300px;
+    height: 100vh;
+    background: var(--color-predetirminado);
+}
+
+.contenido_contacto {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    color: aliceblue;
+    margin-top: 50px;
+}
+
+.subir_logo_cliente {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    margin-bottom: 30px;
+    width: clamp(110px, 12vw, 130px);
+    height: clamp(110px, 12vw, 130px);
+    border-radius: 50%;
+    background-color: aliceblue;
+    color: var(--color-predetirminado);
+}
+
+.subir_logo_cliente img {
+    width: 50%;
+    height: auto;
+}
+
+.contentor_botones_sidebar {
+    display: grid;
+    gap: 15px;
+}
+
+.boton_inicio,
+.boton_habilitacion, 
+.boton_transacciones,
+.boton_nomia,
+.boton_reportes,
+.boton_contabilidad {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+}
+
+select {
+    background-color: var(--color-predetirminado);
+    border: none;
+    border-radius: 8px;
+    color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+     /* transition: background 0.3s, transform 0.2s; */
+}
+
+select:hover {
+  background-color: #4a6ea8;       /* un poco más oscuro en hover */
+  transform: scale(1.02);          /* pequeño efecto zoom */
+}
+
+select:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+option {
+    background-color: aliceblue;
+    color: var(--color-predetirminado);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.img_botones_sidebar {
+    max-width: 20px;
+    max-height: 20px;
+}
