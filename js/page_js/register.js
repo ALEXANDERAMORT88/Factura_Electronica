@@ -9,14 +9,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const email_usuario = document.getElementById("email_usuario");
   const confirmacion_email = document.getElementById("confirmacion_email");
   const contrasena_usuario = document.getElementById("contrasena_usuario");
-  const confirmacion_contraseña = document.getElementById(
-    "confirmacion_contraseña"
-  );
+  const confirmacion_contraseña = document.getElementById("confirmacion_contraseña");
 
   const contenedor_registro = document.getElementById("contenedor_registro");
-  const contendor_de_seleccion = document.getElementById(
-    "contendor_de_seleccion"
-  );
+  const contendor_de_seleccion = document.getElementById("contendor_de_seleccion");
   const boton_compra = document.getElementById("boton_compra");
   const boton_regresar = document.getElementById("boton_regresar");
 
@@ -32,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   // Creamos una funcion el cual no va ayudar a manejar el evento para manejar el envio de la informacion del formulario y guardarlo en MongoDB.
-  formulario_registro.addEventListener("submit", function (event) {
+  formulario_registro.addEventListener('submit', function (event) {
     event.preventDefault();
 
     let saveNumeroIdentificacion = numero_identificacion.value;
@@ -151,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Respuesta del backend:", data); // Inspecciona la respuesta
         alert(data.message); // Mostramos mensaje al Backend
         if (data.cliente) {
-          window.location.href = "../../pages/generar_factura.html";
+          window.open('../../pages/generar_factura.html', '_blanck');
         }
       })
       .catch((error) => {

@@ -38,7 +38,6 @@ router.get("/:id", async (req, res) => {
 // Ruta POST para registrar un nuevo cliente en la base de datos
 router.post("/",crearCliente );
 
-
 // Ruta DELETE nos permite eliminar un cliente segun su ID.
 router.delete("/:id", async (req, res) => {
   try {
