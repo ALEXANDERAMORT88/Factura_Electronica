@@ -8,6 +8,7 @@
 /* Creamos variables para determinar colores que serián reutilizables */
 :root{
     --color-predetirminado:#425EEB;
+    --color-fuente: #f0f8ff;
 }
 /* Damos estilos a la barra de navegación superior*/
 .info_contacto {
@@ -48,37 +49,15 @@
 
 .info_navbar {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding: 10px 25px;
+    grid-template-columns: auto auto;
+    padding: 1.2rem 1rem;
 }
 
 .info_navbar_funcionalidades{
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 11rem);
     justify-items: center;
     align-items: center;
-}
-/* Estilos a los botones de información */
-.btn_inicio,
-.planes,
-.producto,
-.software {
-    background-color: transparent;
-    /* border: 1px solid black; */
-    color: black;
-    width: 132px;
-    height: 35px;
-    text-align: center;
-    padding: 7px 0;
-    font-weight:bold ;
-    cursor: pointer;
-}
-
-.btn_inicio:hover,
-.planes:hover,
-.producto:hover,
-.software:hover {
-    color: var(--color-predetirminado);
 }
 
 .inf_sesion{
@@ -87,6 +66,67 @@
     justify-content: end;
     justify-items: end;
     align-items: center;
+}
+/* Estilos a los botones de información */
+.btn_inicio,
+.btn_planes,
+.btn_producto,
+.btn_software {
+    background-color: var(--color-predetirminado);
+    color: var(--color-fuente);
+    width: 9rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.5rem 0;
+    font-weight:bold ;
+    cursor: pointer;
+    transition: all 0.3 ease;
+}
+
+.btn_inicio:hover,
+.btn_planes:hover,
+.btn_producto:hover,
+.btn_software:hover {
+    background-color: var(--color-fuente);
+    color: var(--color-predetirminado);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Menú oculto */
+.dropdown_menu {
+    display: none;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    background-color: var(--color-predetirminado);
+    border-radius: 0.3rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown_menu li {
+    display: block;
+    padding: 0.6rem;
+    color: var(--color-fuente);
+    transition: background 0.2s;
+    cursor: pointer;
+}
+
+.dropdown_menu li:hover {
+    background-color: var(--color-fuente);
+    color: var(--color-predetirminado);
 }
 
 .img_fondo_asesoria{
@@ -100,20 +140,18 @@
     align-items: center;
     justify-items: end;
     padding: 0 100px 0 0;
-
 }
+
 /* Estilos al formulario de solicitud de información */
 .formulario_asesoria{
     width: 350px;
     height: 350px;
     background-color: #fafbfd;
-    /* border: 2px solid grey; */
     border-radius: 8px;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     display: grid;
-    justify-items: center;
+    justify-items: center;   
 }
-
 
 h2{
     height: 55px;

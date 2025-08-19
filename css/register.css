@@ -7,6 +7,7 @@
 
 :root{
     --color-predetirminado:#425EEB;
+    --color-fuente: #f0f8ff;
 }
 
 .d-none {
@@ -66,9 +67,9 @@
 .planes,
 .producto,
 .software {
-    background-color: transparent;
+    background-color: var(--color-predetirminado);
     /* border: 1px solid black; */
-    color: black;
+    color: var(--color-fuente);
     width: 132px;
     height: 35px;
     text-align: center;
@@ -87,7 +88,7 @@
 
 .contendor_creando_cuenta {
     display: grid;
-    grid-template-columns: 600px 600px;
+    grid-template-columns: 37.5rem 37.5rem;
     justify-content: center;   
 }
 
