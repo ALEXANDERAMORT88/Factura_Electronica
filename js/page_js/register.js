@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const numero_celular = document.getElementById("numero_celular");
   const email_usuario = document.getElementById("email_usuario");
   const confirmacion_email = document.getElementById("confirmacion_email");
-  const contrasena_usuario = document.getElementById("contrasena_usuario");
+  const password_ingreso = document.getElementById("password_ingreso");
   const confirmacion_contraseña = document.getElementById("confirmacion_contraseña");
 
   const contenedor_registro = document.getElementById("contenedor_registro");
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let saveNumeroCelular = numero_celular.value;
     let saveEmailUsuario = email_usuario.value;
     let saveConfirmacionEmail = confirmacion_email.value;
-    let contraseñaUsuario = contrasena_usuario.value;
+    let contraseñaUsuario = password_ingreso.value;
     let saveConfirmacionContraseña = confirmacion_contraseña.value;
 
     // función para marcar el error
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
       numero_celular,
       email_usuario,
       confirmacion_email,
-      contrasena_usuario,
+      password_ingreso,
       confirmacion_contraseña,
     ].forEach((campo) => limpiarError(campo));
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
       hayError = true;
     }
     if (!contraseñaUsuario) {
-      marcarError(contraseña_usuario);
+      marcarError(password_ingreso);
       hayError = true;
     }
     if (!saveConfirmacionContraseña) {
@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     // Validar contraseña
     if (contraseñaUsuario !== saveConfirmacionContraseña) {
-      marcarError(contrasena_usuario);
+      marcarError(password_ingreso);
       marcarError(confirmacion_contraseña);
       alert("las contraseñas no coiciden");
       return;
@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre_usuario: nombreUsuario,
         numero_celular: saveNumeroCelular,
         email_usuario: saveEmailUsuario,
-        contrasena_usuario: contraseñaUsuario
+        password_ingreso: contraseñaUsuario
     }
 
     console.log(datosAEnviar);
@@ -139,7 +139,7 @@ document.addEventListener("DOMContentLoaded", function () {
         nombre_usuario: nombreUsuario,
         numero_celular: saveNumeroCelular,
         email_usuario: saveEmailUsuario,
-        contrasena_usuario: contraseñaUsuario,
+        password_ingreso: contraseñaUsuario,
       }),
     })
       .then((response) => response.json())
@@ -147,7 +147,7 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Respuesta del backend:", data); // Inspecciona la respuesta
         alert(data.message); // Mostramos mensaje al Backend
         if (data.cliente) {
-          window.open('../../pages/generar_factura.html', '_blanck');
+          window.open('../../pages/panel _de_gestion.html', '_blanck');
         }
       })
       .catch((error) => {

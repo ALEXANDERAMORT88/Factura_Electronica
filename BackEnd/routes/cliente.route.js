@@ -1,8 +1,10 @@
 import express from "express";
-import ZodClienteSchema from "../schemas/clilente.shema.js";
-import crearCliente  from "../controllers/clilente.controllers.js";
+// import ZodClienteSchema from "../schemas/clilente.shema.js";
+import Cliente from "../model/cliente.model.js";
 
-import { z } from 'zod';
+import {crearCliente,
+        consultaCliente
+}  from "../controllers/clilente.controllers.js";
 
 // Creamos una constante par apoder usar un manejador de rutas
 const router = express.Router();
@@ -10,7 +12,7 @@ const router = express.Router();
 // Ruta get para Obtener todos los cleintes
 router.get("/", async (req, res) => {
   try {
-    const cliente = await ZodClienteSchema.find();
+    const cliente = await Cliente.find();
     res.status(200).json(cliente);
     console.log("Obteniendo todos los clientes");
   } catch (error) {
@@ -23,7 +25,7 @@ router.get("/:id", async (req, res) => {
   try {
     const id = req.params.id;
     // ClienteSchema es el modelo que creamos y lo guardamos en una variable
-    const cliente = await ZodClienteSchema.findById(id);
+    const cliente = await Cliente.findById(id);
     console.log(cliente);
     // Estados si no encontramos el cliente o si lo encontramos
     if (!cliente)
@@ -36,13 +38,16 @@ router.get("/:id", async (req, res) => {
 });
 
 // Ruta POST para registrar un nuevo cliente en la base de datos
-router.post("/",crearCliente );
+router.post("/",crearCliente);
+
+// Ruta POST para el inicio de sesión
+router.post("/login",consultaCliente);
 
 // Ruta DELETE nos permite eliminar un cliente segun su ID.
 router.delete("/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const eliminarCliente = await ClienteSchema.findByIdAndDelete(id);
+    const eliminarCliente = await Cliente.findByIdAndDelete(id);
     if (!eliminarCliente)
       return res.status(404).json({ error: "Cliente no eliminado" });
     res.status(200).json({ message: eliminarCliente });
@@ -63,7 +68,7 @@ router.put("/:id", async (req, res) => {
      * - { new: true }: indica que MongoDB debe retornar el documento ya actualizado,
      *   en lugar de retornar el documento antes de la modificación.
      */
-    const actualizarCliente = await ClienteSchema.findByIdAndUpdate(
+    const actualizarCliente = await Cliente.findByIdAndUpdate(
       id,
       req.body,
       { new: true }

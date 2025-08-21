@@ -6,7 +6,7 @@ const ClienteSchema = new mongoose.Schema({
   nombre_usuario: String,
   numero_celular: String,
   email_usuario: String,
-  contrasena_usuario: String,
+  password_ingreso: String,
 });
 
 const Cliente = mongoose.model("Cliente", ClienteSchema);

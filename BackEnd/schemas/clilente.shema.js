@@ -12,6 +12,7 @@ const ZodClienteSchema = z.object({
 
   nombre_usuario: z
     .string()
+    .regex(/^[0-9]+$/, "El número de identificación solo debe contener números")
     .min(2, "El nombre debe tener mínimo 2 caracteres")
     .max(50, "El nombre no debe superar los 50 caracteres"),
 
@@ -23,7 +24,7 @@ const ZodClienteSchema = z.object({
     .string()
     .email({message:"Debe ser un correo válido"}),
 
-  contrasena_usuario: z
+  password_ingreso: z
     .string()
     .min(8, "La contraseña debe tener al menos 8 caracteres")
     .regex(/[A-Z]/, "La contraseña debe contener al menos una letra mayúscula")
