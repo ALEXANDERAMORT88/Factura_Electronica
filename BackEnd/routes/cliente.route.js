@@ -1,8 +1,8 @@
 import express from "express";
-import Cliente from "../model/cliente.model.js";
+import Empresa from "../model/empresa.model.js";
 
-import {crearCliente,
-        consultaCliente
+import {crearEmpresa,
+        consultaEmpresa
 }  from "../controllers/clilente.controllers.js";
 
 // Creamos una constante par apoder usar un manejador de rutas
@@ -37,10 +37,10 @@ router.get("/:id", async (req, res) => {
 });
 
 // Ruta POST para registrar un nuevo cliente en la base de datos
-router.post("/",crearCliente);
+router.post("/",crearEmpresa);
 
 // Ruta POST para el inicio de sesión
-router.post("/login",consultaCliente);
+router.post("/login",consultaEmpresa);
 
 // Ruta DELETE nos permite eliminar un cliente segun su ID.
 router.delete("/:id", async (req, res) => {

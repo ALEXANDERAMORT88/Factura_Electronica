@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const ZodClienteSchema = z.object({
+const ZodEmpresaSchema = z.object({
   tipoDocumento: z.string().min(1, "El tipo de documento es obligatorio"),
 
   numero_identificacion: z
@@ -27,4 +27,4 @@ const ZodClienteSchema = z.object({
     .regex(/[0-9]/, "La contraseña debe contener al menos un número"),
 });
 
-export default ZodClienteSchema;
+export default ZodEmpresaSchema;

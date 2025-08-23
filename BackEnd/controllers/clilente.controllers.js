@@ -1,10 +1,10 @@
-import ZodClienteSchema from "../schemas/clilente.shema.js";
-import Cliente from "../model/cliente.model.js";
+import ZodEmpresaSchema from "../schemas/clilente.shema.js";
+import Empresa from "../model/empresa.model.js";
 
-// Esta es nuestra Ruta para crear el Cliente
-export const crearCliente = async (req, res) => {
+// Esta es nuestra Ruta para crear la Empresa
+export const crearEmpresa = async (req, res) => {
   try {
-    const validarDatos = ZodClienteSchema.safeParse(req.body);
+    const validarDatos = ZodEmpresaSchema.safeParse(req.body);
 
     // console.log("Req body recibido:", req.body);
     // console.log("Resultado safeParse:", validarDatos);
@@ -25,37 +25,38 @@ export const crearCliente = async (req, res) => {
     }
 
     // Se crea una nueva instancia del esquema Cliente a partir de los datos recibidos en la solicitud (req.body)
-    const nuevoCliente = new Cliente(validarDatos.data);
+    const nuevaEmpresa = new Empresa(validarDatos.data);
 
     // Guardamos en una constante para enviarlo a BD
-    const guardarCliente = await nuevoCliente.save();
+    const guardarEmpresa = await nuevaEmpresa.save();
 
     res.status(201).json({
       message: "Cliente creado exitosamente ✅",
-      cliente: guardarCliente,
+      cliente: guardarEmpresa,
     });
-    console.log("Creando cliente 🤗");
+    console.log("Empresa de Cliente creada 🤗");
   } catch (error) {
-    console.error("Error al actualizar el cliente", error);
+    console.error("Error al crear empresa", error);
     res.status(500).json({ message: "Error interno del servidor" });
   }
 };
 
-export const consultaCliente = async (req, res) => {
+// Esta es nuestra Ruta para consultarl nuestra Empresa
+export const consultaEmpresa = async (req, res) => {
   const { usuario, password } = req.body;
 
   try {
-    const cliente = await Cliente.findOne({
+    const empresa = await Empresa.findOne({
       $or: [{ email_usuario: usuario }, { numero_identificacion: usuario }],
     });
     // Vlaidando cliente
-    if (!cliente) {
+    if (!empresa) {
       return res
         .status(400)
-        .json({ success: false, message: "Usuario no encontrado" });
+        .json({ success: false, message: "Empresa no encontrado" });
     }
     //Validando contraseña
-    if (cliente.password_ingreso !== password) {
+    if (empresa.password_ingreso !== password) {
       return res
         .status(400)
         .json({ success: false, message: "Contraseña no encontrada" });
@@ -71,3 +72,4 @@ export const consultaCliente = async (req, res) => {
       .json({ success: false, message: "Error al iniciar sesión" });
   }
 };
+

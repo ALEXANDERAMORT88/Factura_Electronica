@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+  
   const formulario_ingreso = document.getElementById("formulario_ingreso");
   const usuarioFormulario = document.getElementById("usuarioFormulario");
   const password_ingreso = document.getElementById("password_ingreso");
