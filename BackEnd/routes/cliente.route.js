@@ -1,5 +1,4 @@
 import express from "express";
-// import ZodClienteSchema from "../schemas/clilente.shema.js";
 import Cliente from "../model/cliente.model.js";
 
 import {crearCliente,

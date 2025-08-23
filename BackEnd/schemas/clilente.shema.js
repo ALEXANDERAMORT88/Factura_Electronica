@@ -1,9 +1,7 @@
-import  { z }  from "zod";
+import { z } from "zod";
 
 const ZodClienteSchema = z.object({
-  tipoDocumento: z
-    .string()
-    .min(1, "El tipo de documento es obligatorio"),
+  tipoDocumento: z.string().min(1, "El tipo de documento es obligatorio"),
 
   numero_identificacion: z
     .string()
@@ -12,17 +10,14 @@ const ZodClienteSchema = z.object({
 
   nombre_usuario: z
     .string()
-    .regex(/^[0-9]+$/, "El número de identificación solo debe contener números")
     .min(2, "El nombre debe tener mínimo 2 caracteres")
     .max(50, "El nombre no debe superar los 50 caracteres"),
 
   numero_celular: z
-      .string()
-      .regex(/^\d{10}$/, "El teléfono debe tener 10 dígitos"),
-
-  email_usuario: z
     .string()
-    .email({message:"Debe ser un correo válido"}),
+    .regex(/^\d{10}$/, "El teléfono debe tener 10 dígitos"),
+
+  email_usuario: z.string().email({ message: "Debe ser un correo válido" }),
 
   password_ingreso: z
     .string()
@@ -32,4 +27,4 @@ const ZodClienteSchema = z.object({
     .regex(/[0-9]/, "La contraseña debe contener al menos un número"),
 });
 
-export default ZodClienteSchema
+export default ZodClienteSchema;
