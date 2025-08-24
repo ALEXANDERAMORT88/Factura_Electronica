@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  
   const formulario_ingreso = document.getElementById("formulario_ingreso");
   const usuarioFormulario = document.getElementById("usuarioFormulario");
   const password_ingreso = document.getElementById("password_ingreso");
@@ -10,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const usuario = usuarioFormulario.value;
     const password = password_ingreso.value;
 
-    fetch("http://localhost:5000/clientes/login", {
+    fetch("http://localhost:5000/empresa/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -22,11 +21,22 @@ document.addEventListener("DOMContentLoaded", function () {
           const errorData = await response.json();
           throw new Error(errorData.message || "Error en login");
         }
-        return response.json(); // <- aquí regresas el JSON ya resuelto
+        return response.json(); // Qquí regresamos el JSON ya resuelto
       })
       .then((data) => {
-        alert("Inicio de sesión exitoso");
-        window.location.href = "../../pages/panel _de_gestion.html";
+        console.log("Respuesta del backend (login):", data);
+
+        if (data.success && data.usuario) {
+          alert("Inicio de sesión exitoso");
+          // Guardamos el nombre de la empresa  en localStorage
+          localStorage.setItem("empresaNombre", data.usuario.nombre_usuario);
+          console.log("Guardadno en localStorage", localStorage.getItem("empresaNombre")
+          );
+          // Redirigimos a Panel de gestion
+          window.location.href = "../../pages/panel_de_gestion.html";
+        } else {
+          alert(data.message);
+        }
       })
       .catch((error) => {
         alert(error.message);

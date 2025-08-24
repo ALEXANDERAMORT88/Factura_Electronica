@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log(datosAEnviar);
     
     // Vamos a enviar los datos al BackEnd
-    fetch("http://localhost:5000/clientes", {
+    fetch("http://localhost:5000/empresa", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -146,19 +146,18 @@ document.addEventListener("DOMContentLoaded", function () {
       .then((data) => {
         console.log("Respuesta del backend:", data); // Inspecciona la respuesta
         alert(data.message); // Mostramos mensaje al Backend
-        if (data.cliente) {
-          window.open('../../pages/panel _de_gestion.html', '_blanck');
+
+        // Si el registro fue exitoso, guardamos el nombre en localStorage
+        if (data.empresa) {
+          localStorage.setItem("empresaNombre", data.empresa.nombre_usuario);
+          console.log("Guardadno en localStorage:", localStorage.getItem("empresaNombre"));
         }
+        // Redirigimos al Panel de gestion
+        window.location.replace("../../pages/panel_de_gestion.html");
       })
       .catch((error) => {
         console.error("Error:", error);
         alert("Error al registrar el cliente");
       });
-
-    // localStorage.setItem("saveNumeroIdentificaion", saveNumeroIdentificaion);
-    // localStorage.setItem("nombreUsuario", nombreUsuario);
-    // localStorage.setItem("saveNumeroCelular", saveNumeroCelular);
-    // localStorage.setItem("contraseñaUsuario", contraseñaUsuario);
-    // localStorage.setItem("saveEmailUsuario", saveEmailUsuario);
   });
 });
