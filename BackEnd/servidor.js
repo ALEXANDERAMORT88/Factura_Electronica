@@ -7,7 +7,7 @@ import mongoose from 'mongoose'
 // 4. Importar el middleware CORS
 import cors from 'cors'
 
-import router from './routes/cliente.route.js'
+import router from './routes/empresa.route.js'
 
 // Carga las variables del archivo .env
 dotenv.config()
@@ -21,7 +21,7 @@ app.disable('x-powered-by')
 // Creamos Middleware y rutas. 
 app.use(express.json())
 app.use(cors()) //Esto nos permite todas las solicitudes CORS. 
-app.use('/clientes', router)
+app.use('/empresa', router)
 
 // Vamos a crear un puerto para levantar el servidor.
 const PORT = process.env.PORT ?? 1234

@@ -1,6 +1,7 @@
 import ZodEmpresaSchema from "../schemas/clilente.shema.js";
 import Empresa from "../model/empresa.model.js";
 
+
 // Esta es nuestra Ruta para crear la Empresa
 export const crearEmpresa = async (req, res) => {
   try {
@@ -32,7 +33,7 @@ export const crearEmpresa = async (req, res) => {
 
     res.status(201).json({
       message: "Cliente creado exitosamente ✅",
-      cliente: guardarEmpresa,
+      empresa: guardarEmpresa,
     });
     console.log("Empresa de Cliente creada 🤗");
   } catch (error) {
@@ -44,6 +45,8 @@ export const crearEmpresa = async (req, res) => {
 // Esta es nuestra Ruta para consultarl nuestra Empresa
 export const consultaEmpresa = async (req, res) => {
   const { usuario, password } = req.body;
+  console.log("Datos recibidosen el login", req.body);
+  
 
   try {
     const empresa = await Empresa.findOne({
@@ -53,7 +56,7 @@ export const consultaEmpresa = async (req, res) => {
     if (!empresa) {
       return res
         .status(400)
-        .json({ success: false, message: "Empresa no encontrado" });
+        .json({ success: false, message: "Empresa no encontrada" });
     }
     //Validando contraseña
     if (empresa.password_ingreso !== password) {
@@ -62,9 +65,15 @@ export const consultaEmpresa = async (req, res) => {
         .json({ success: false, message: "Contraseña no encontrada" });
     }
 
-    res
-      .status(200)
-      .json({ success: true, message: "Inicio de sesión exitoso" });
+    res.status(200).json({
+      success: true,
+      message: "Inicio de sesión exitoso",
+      data: {
+        id: empresa._id,
+        nombre: empresa.nombre_usuario,
+        email: empresa.email_usuario,
+      },
+    });
   } catch (error) {
     console.error("Error al iniciar sesion", error);
     res
@@ -73,3 +82,30 @@ export const consultaEmpresa = async (req, res) => {
   }
 };
 
+// Esta es la ruta para solicitar Nombre de la Empresa y ubicarla en el panel de control
+export const consultaNombreEmpresa = async (req, res) => {
+  const { nombreEmpresa } = req.params;
+
+  try {
+    const empresa = await Empresa.findOne({ nombre_usuario: nombreEmpresa });
+
+    if (!empresa) {
+      return res
+        .status(400)
+        .json({ success: false, message: "Empresa no encontrada" });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Empresa encontrada ✅",
+      data: {
+        id: empresa._id,
+        nombre: empresa.nombre_usuario,
+        email: empresa.email_usuario,
+      },
+    });
+  } catch (error) {
+    console.error("Error al consulata nombre de la empresa ❌", error);
+    res.status(500).json({ success: false, message: "Errro del servidor" });
+  }
+};

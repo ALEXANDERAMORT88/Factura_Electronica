@@ -1,7 +1,9 @@
 import { z } from "zod";
 
 const ZodEmpresaSchema = z.object({
-  tipoDocumento: z.string().min(1, "El tipo de documento es obligatorio"),
+  tipoDocumento: z
+  .string()
+  .min(1, "El tipo de documento es obligatorio"),
 
   numero_identificacion: z
     .string()
@@ -17,7 +19,9 @@ const ZodEmpresaSchema = z.object({
     .string()
     .regex(/^\d{10}$/, "El teléfono debe tener 10 dígitos"),
 
-  email_usuario: z.string().email({ message: "Debe ser un correo válido" }),
+  email_usuario: z
+  .string()
+  .email({ message: "Debe ser un correo válido" }),
 
   password_ingreso: z
     .string()
