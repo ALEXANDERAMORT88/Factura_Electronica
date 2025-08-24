@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
           const errorData = await response.json();
           throw new Error(errorData.message || "Error en login");
         }
-        return response.json(); // Qquí regresamos el JSON ya resuelto
+        return response.json(); // Aquí regresamos el JSON ya resuelto
       })
       .then((data) => {
         console.log("Respuesta del backend (login):", data);

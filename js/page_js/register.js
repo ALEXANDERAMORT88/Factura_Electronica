@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // limpiar errores antes de validar
-    [
+   [
       numero_identificacion,
       nombre_usuario,
       numero_celular,
@@ -151,10 +151,16 @@ document.addEventListener("DOMContentLoaded", function () {
         if (data.empresa) {
           localStorage.setItem("empresaNombre", data.empresa.nombre_usuario);
           console.log("Guardadno en localStorage:", localStorage.getItem("empresaNombre"));
+
+          const nombreUsuarioDOM = document.querySelector(".nombre_usuario");
+          if (nombreUsuarioDOM) {
+          nombreUsuarioDOM.textContent = data.empresa.nombre_usuario;
         }
         // Redirigimos al Panel de gestion
         window.location.replace("../../pages/panel_de_gestion.html");
-      })
+      }
+    })
+      
       .catch((error) => {
         console.error("Error:", error);
         alert("Error al registrar el cliente");

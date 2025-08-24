@@ -49,6 +49,7 @@ export const consultaEmpresa = async (req, res) => {
   
 
   try {
+    
     const empresa = await Empresa.findOne({
       $or: [{ email_usuario: usuario }, { numero_identificacion: usuario }],
     });
@@ -82,7 +83,8 @@ export const consultaEmpresa = async (req, res) => {
   }
 };
 
-// Esta es la ruta para solicitar Nombre de la Empresa y ubicarla en el panel de control
+// Esta es la ruta para solicitar Nombre de la Empresa y ubicarla en el panel de control.
+// usamos una constante de nombre consultaNombreEmpresa
 export const consultaNombreEmpresa = async (req, res) => {
   const { nombreEmpresa } = req.params;
 
