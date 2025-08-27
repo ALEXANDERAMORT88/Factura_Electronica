@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const formulario_ingreso = document.getElementById("formulario_ingreso");
-  const usuarioFormulario = document.getElementById("usuarioFormulario");
-  const password_ingreso = document.getElementById("password_ingreso");
+  const formulario_ingreso = document.getElementById('formulario_ingreso');
+  const usuarioFormulario = document.getElementById('usuarioFormulario');
+  const password_ingreso = document.getElementById('password_ingreso');
+  const link_vista_registro = document.getElementById('link_vista_registro')
 
   formulario_ingreso.addEventListener("submit", function (event) {
     event.preventDefault();
@@ -42,4 +43,9 @@ document.addEventListener("DOMContentLoaded", function () {
         alert(error.message);
       });
   });
+
+  // Nos permite redirigir a la vista de Register 
+  link_vista_registro.addEventListener('click', function () {
+    window.open('../../pages/register.html', '_blanck')
+  })
 });
