@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
     contenedor_registro.classList.add("d-none");
   });
 
-  // Creamos una funcion el cual no va ayudar a manejar el evento para manejar el envio de la informacion del formulario y guardarlo en MongoDB.
+  // Creamos una funcion el cual no va ayudar a manejar el evento para manejar
+  //  el envio de la informacion del formulario y guardarlo en MongoDB.
   formulario_registro.addEventListener('submit', function (event) {
     event.preventDefault();
 

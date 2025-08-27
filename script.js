@@ -24,12 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 100);
   });
 
+  // Nos ayuda a el despliegue de nuestars opciones en el Boton Inicio de sesión 
   dropdownMenu.addEventListener("mouseleave", function () {
     dropdownMenu.style.display = "none";
   });
 
 //   Damos opciones para pasar al Login para cada una de las opciones. 
-  btnOpcionContador.addEventListener('click', function (e) {
+  btnOpcionContador.addEventListener('click', function () {
     window.open('./pages/login.html', '_blanck')
   })
 
@@ -44,4 +45,5 @@ document.addEventListener("DOMContentLoaded", function () {
   btnOpcionTienda.addEventListener('click', function () {
     window.open('./pages/login.html', '_blank')
   })
+  
 });

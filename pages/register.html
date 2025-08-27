@@ -98,6 +98,7 @@
 
         <button id="boton_regresar">Regresar</button>
 
+        <!-- Formulario que nos va a permitir crear el cliente (persona o empresa que va a generar las facturas) -->
         <form id="formulario_registro" action="">
           <h2>Creando tu cuenta</h2>
           <p>Da el primer paso hacia el crecimiento de tu negocio: ingresa tus datos y explora todo lo que tiene para
@@ -105,7 +106,7 @@
           </p>
 
           <div class="contenedor_info_compra">
-
+            <!-- Tenemos los distintos tipos de documento que el cliente tiene que seleccionar -->
             <select id="tipoDocumento">
               <option value="1">Tipo Documento</option>
               <option value="CC">Cédula de ciudadanía</option>
@@ -114,7 +115,8 @@
               <option value="CE">Cédula Extranjería</option>
               <option value="RUT">RUT</option>
             </select>
-
+            <!-- En cada uno de los Input vamos a ingresar la informacion esencial
+              para crear una sesión y poder gestionar los distintos documentos -->
             <input id="numero_identificacion" type="text" placeholder="Número de documento">
             <input id="nombre_usuario" type="text" placeholder="Nombres y Apellidos">
             <input id="numero_celular" type="text" placeholder="Celular">
@@ -124,7 +126,8 @@
             <input id="confirmacion_contraseña" type="password" placeholder="Confirmar contraeña">
 
           </div>
-
+          <!-- Desde el Button vamos a poder enviar la informacion suministrada a nustro BackEnd
+            y de hay a nuetsra DB que es MongoDB -->
           <button type="submit">Crea tu cuenta</button>
 
         </form>
