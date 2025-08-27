@@ -6,14 +6,15 @@
 }
 
 :root {
-    --color-predetirminado: #425EEB;
+    --color-primary: #425EEB;
+    --color-secondary: #f0f8ff;
+    --colo-surface:#207e0d; 
 }
 
 .img_publicidad {
     width: 43vw;
-    height: 43.7rem;
-    max-width: 687px;
-    margin: 10px;
+    height: 43.22rem;
+    max-width: 42.9rem;
 }
 
 .contenedor {
@@ -24,6 +25,8 @@
 }
 
 .login {
+    width: 50vw;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,13 +36,93 @@
     width: 25rem;
     max-width: 100%;
     height: auto;
-    background-color: aliceblue;
-    border: solid 2px rgb(197, 197, 245);
-    border-radius: 5px;
+    background-color: var(--color-secondary);
+    border: solid 0.125rem rgb(197, 197, 245);
+    border-radius: 0.3rem;
     display: grid;
     place-content: center;
     padding: 2rem;
     gap: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+
+.boton_ingreso {
+    width: 16.8rem;
+    height: 2.35rem;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0.3rem;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton_ingreso:hover {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: 0.125rem solid var(--color-primary);
+}
+
+.contenedor_inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+}
+
+.estilo_input {
+    position: relative;
+    margin: 0.75rem 0;
+}
+
+.estilo_input input {
+    width: 16.8rem;
+    height: 2.35rem;
+    padding: 0.5rem 0.625rem;
+    font-size: 1rem;
+    outline: none;
+    border-radius: 0.3rem;
+    border: gray solid 0.125rem;
+    background-color: transparent;
+    color:black;
+    transition: 0.15s all ease;
+}
+
+.estilo_input input:focus {
+    border-color: var(--colo-surface);
+    outline: none;
+
+}
+
+.estilo_input input::placeholder {
+    color: transparent;
+}
+
+ .input_label {
+    position: absolute;
+    top: 0.562rem;
+    left: 0.625rem;
+    font-size: 1.125rem;
+    padding: 0 0.625rem;
+    color: #787676;
+    pointer-events: none;
+    transition: all 0.15s ease;
+    background: var(--color-secondary);
+}
+
+.estilo_input input:focus + .input_label,
+.estilo_input input:not(:placeholder-shown) +
+.input_label {
+    transform: translate(0.3rem, -1.375rem);
+    font-size: 0.875rem;
+    color: var(--color-primary);
 }
 
 /* Responsividad para pantallas menores a 56.25rem */
@@ -51,7 +134,7 @@
         display: grid;
         grid-template-columns: auto;
         place-content: center;
-        background-color: var(--color-predetirminado);
+        background-color: var(--color-primary);
     }
 
     .img_publicidad {
@@ -66,6 +149,16 @@
         width: 100vw;
         max-width: 25rem;
         padding: 1rem;
+    }
+
+    .boton_ingreso {
+        width: 16rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .boton_ingreso:hover {
+        background-color: var(--color-secondary);
+        color: var(--color-primary);
     }
 }
 

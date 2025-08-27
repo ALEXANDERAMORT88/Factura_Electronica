@@ -18,13 +18,28 @@
         </section>
 
         <section class="login">
+            <!-- Formulario que permite ingresa datos para poder ingresar a panel de gestión -->
             <form class="formulario" id="formulario_ingreso" action="">
                 <h2>Iniciar Sesión</h2>
-                <span>Aún no tienes una cuenta <a href="">Créala aquí</a></span>
-                <input id="usuarioFormulario" type="text" placeholder="Usuario" required>
-                <input id="password_ingreso" type="password" placeholder="Contraseña" required>
+                <span>Aún no tienes una cuenta <a href="" id="link_vista_registro">Créala aquí</a></span>
+
+                <!--En los input nos permite ingresar la informacion solicitada
+                 para poderla enviar al BackEnd y de hay a la base de MongoDb  -->
+
+                 <!-- Creamos una secction en nuestro HTML para poder dar más presentación a nuestro formulario y con CSS le dimos un mejor estilo  -->
+                <section class="contenedor_inputs">
+                    <div class="estilo_input">
+                        <input id="usuarioFormulario" type="text" placeholder="Usuario" required>
+                        <label class="input_label">Correo electrónico *</label>
+                    </div>
+                    <div class="estilo_input">
+                        <input id="password_ingreso" type="password" placeholder="Contraseña" required>
+                        <label class="input_label">Contraseña *</label>
+                    </div>
+                </section>
+
                 <a href="">¿Olvidaste tu contraseña?</a>
-                <button type="submit">Ingresar</button>
+                <button class="boton_ingreso" type="submit">Continuar</button>
             </form>
         </section>
 
