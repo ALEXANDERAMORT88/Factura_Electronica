@@ -6,8 +6,9 @@
 }
 
 :root{
-    --color-predetirminado:#425EEB;
-    --color-fuente: #f0f8ff;
+    --color-primary:#425EEB;
+    --color-secondary: #f0f8ff;
+    --colo-surface:#42dc23;
 }
 
 .d-none {
@@ -16,7 +17,7 @@
 
 .info_contacto {
     height: 50px;
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-primary);
     display: grid;
     justify-content: end;
     align-items: center;
@@ -67,9 +68,9 @@
 .planes,
 .producto,
 .software {
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-primary);
     /* border: 1px solid black; */
-    color: var(--color-fuente);
+    color: var(--color-secondary);
     width: 132px;
     height: 35px;
     text-align: center;
@@ -86,13 +87,87 @@
     align-items: center;
 }
 
+.contenedor_opciones_compra {
+    display: grid;
+    grid-template-columns: clamp(13.5rem, 18vw, 17.5rem) clamp(13.5rem, 18vw, 17.5rem);
+    justify-content: space-evenly;
+    grid-template-rows: 1fr;
+}
+
+.gratis, .mas_popular {
+    width: 19rem;
+    height: 15rem;
+    display: grid;
+    margin-top: 4rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border: 0.1rem solid var(--color-primary);
+    border-radius: 0.3125rem;
+}
+
+.gratis button, .mas_popular button {
+    width: 13rem;
+    height: 2.3rem;
+    margin: 0 auto;
+    background-color: var(--colo-surface);
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    font-weight: 900;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.gratis button:hover, .mas_popular button:hover {
+background-color: var(--color-secondary);
+color: var(--colo-surface);
+border: 0.125rem solid var(--color-primary);
+}
+
+h4 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: grey;
+}
+
+.contendor_creando_cuenta {
+    background-color: rgb(247, 250, 250);
+    padding: 1.3rem;
+    margin: 2rem;
+}
+
+.boton_regresar {
+    padding-bottom: 1.5rem;
+    background-color: transparent;
+    border: none;
+    color: var(--color-primary);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.flecha {
+    width: 1rem;
+}
+
 .contendor_creando_cuenta {
     display: grid;
     grid-template-columns: 37.5rem 37.5rem;
     justify-content: center;   
 }
 
+.content_formulario_registro {
+    text-align: center;
+}
+
+.info_parrafo {
+    margin: 1rem;
+}
+
 .contenedor_info_compra {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 1rem;
 }

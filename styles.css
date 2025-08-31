@@ -7,13 +7,13 @@
 }
 /* Creamos variables para determinar colores que serián reutilizables */
 :root{
-    --color-predetirminado:#425EEB;
-    --color-fuente: #f0f8ff;
+    --color-primary:#425EEB;
+    --color-secondary: #f0f8ff;
 }
 /* Damos estilos a la barra de navegación superior*/
 .info_contacto {
     height: 50px;
-    background-color: var(--color-predetirminado); /*Usos de la variable global*/
+    background-color: var(--color-primary); /*Usos de la variable global*/
     display: grid;
     justify-content: end;
     align-items: center;
@@ -72,8 +72,8 @@
 .btn_planes,
 .btn_producto,
 .btn_software {
-    background-color: var(--color-predetirminado);
-    color: var(--color-fuente);
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
     width: 9rem;
     height: 2rem;
     border: none;
@@ -90,8 +90,8 @@
 .btn_planes:hover,
 .btn_producto:hover,
 .btn_software:hover {
-    background-color: var(--color-fuente);
-    color: var(--color-predetirminado);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .dropdown {
@@ -105,7 +105,7 @@
     position: absolute;
     top: 110%;
     left: 0;
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-primary);
     border-radius: 0.3rem;
     list-style: none;
     padding: 0;
@@ -119,14 +119,14 @@
 .dropdown_menu li {
     display: block;
     padding: 0.6rem;
-    color: var(--color-fuente);
+    color: var(--color-secondary);
     transition: background 0.2s;
     cursor: pointer;
 }
 
 .dropdown_menu li:hover {
-    background-color: var(--color-fuente);
-    color: var(--color-predetirminado);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .img_fondo_asesoria{

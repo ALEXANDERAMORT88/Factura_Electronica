@@ -8,10 +8,10 @@
 :root {
     --color-primary: #425EEB;
     --color-secondary: #f0f8ff;
-    --colo-surface:#207e0d; 
+    --colo-surface:#42dc23; 
 }
 
-.img_publicidad {
+.img_publicidad {   
     width: 43vw;
     height: 43.22rem;
     max-width: 42.9rem;

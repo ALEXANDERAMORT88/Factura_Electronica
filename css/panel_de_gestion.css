@@ -7,8 +7,8 @@
 }
 
 :root {
-    --color-predetirminado: #425EEB;
-    --color-fondo-panel: #f5f5f5; 
+    --color-primary: #425EEB;
+    --color-secondary: #f5f5f5; 
     --color-fuente: #f0f8ff;
 }
 
@@ -25,7 +25,7 @@
     grid-area: sidebar;
     width: clamp(13.5rem, 16vw, 17.5rem); /* flexible pero controlado */;
     min-height: 100dvh; /* mejor soporte en móviles */
-    background: var(--color-predetirminado);
+    background: var(--color-primary);
     padding: 1rem;
     /* overflow-y: auto; */
 }
@@ -48,8 +48,8 @@
     width: clamp(7rem, 12vw, 8rem);
     height: clamp(7rem, 12vw, 8rem);
     border-radius: 50%;
-    background-color: aliceblue;
-    color: var(--color-predetirminado);
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .subir_logo_cliente img {
@@ -77,7 +77,7 @@
 select {
     width: 100%;
     max-width: 300px;
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-primary);
     border: none;
     border-radius: 0.5rem;
     color: var(--color-fuente);
@@ -99,7 +99,7 @@ select:focus {
 
 option {
     background-color: aliceblue;
-    color: var(--color-predetirminado);
+    color: var(--color-primary);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14px;
     cursor: pointer;
@@ -114,7 +114,7 @@ option {
     width: clamp(15rem, 65vw, 62rem);;
     height: auto;
     margin: 1.5rem;
-    background-color: var(--color-fondo-panel);
+    background-color: var(--color-secondary);
     border-radius: 1rem;
 }
 
@@ -143,12 +143,12 @@ h2 {
     place-content: center;
     place-items: center;
     text-align: center;
-    color: var(--color-predetirminado);
+    color: var(--color-primary);
     cursor: pointer;
 }
 
 .boton_crear:hover {
-    background-color: var(--color-predetirminado);
+    background-color: var(--color-primary);
     border-radius: 0.5rem;
     transform: scale(1.02);
     color: var(--color-fuente);
