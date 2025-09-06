@@ -1,0 +1,170 @@
+/* Aqui reiniciamos los estilos que estan por defecto de los elementos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --color-primary: #425EEB;
+    --color-secondary: #f5f5f5; 
+    --color-fuente: #f0f8ff;
+}
+
+.contenedor_panel {
+    display: grid;
+    grid-template-columns: clamp(13.5rem, 18vw, 17.5rem) 1fr;
+    grid-template-rows: 50px 1fr;
+    grid-template-areas:
+        'sidebar header'
+        'sidebar main';
+}
+
+.opcion_de_navegacion {
+    grid-area: sidebar;
+    width: clamp(13.5rem, 16vw, 17.5rem); /* flexible pero controlado */;
+    min-height: 100dvh; /* mejor soporte en móviles */
+    background: var(--color-primary);
+    padding: 1rem;
+    /* overflow-y: auto; */
+}
+
+.contenido_contacto {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    color: var(--color-fuente);
+    margin-top: clamp(1rem, 5vw, 3rem);
+}
+
+.subir_logo_cliente {
+    display: grid;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    margin-bottom: 2rem;
+    width: clamp(7rem, 12vw, 8rem);
+    height: clamp(7rem, 12vw, 8rem);
+    border-radius: 50%;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+}
+
+.subir_logo_cliente img {
+    width: 50%;
+    height: auto;
+}
+
+.contentor_botones_sidebar {
+    display: grid;
+    gap: 15px;
+}
+
+.boton_inicio,
+.boton_habilitacion, 
+.boton_transacciones,
+.boton_nomia,
+.boton_reportes,
+.boton_contabilidad {
+    width: auto;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
+}
+
+
+select {
+    width: 100%;
+    max-width: 300px;
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 0.5rem;
+    color: var(--color-fuente);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    outline: none;
+    cursor: pointer;
+     /* transition: background 0.3s, transform 0.2s; */
+}
+
+select:hover {
+  background-color: #4a6ea8;       /* un poco más oscuro en hover */
+  transform: scale(1.02);          /* pequeño efecto zoom */
+}
+
+select:focus {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); 
+}
+
+option {
+    background-color: aliceblue;
+    color: var(--color-primary);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.img_botones_sidebar {
+    max-width: 20px;
+    max-height: 20px;
+}
+
+
+.bienvenida {
+    width: clamp(15rem, 79vw, 77rem);
+    height: auto;
+    margin-top: 3.3rem;
+    background-color: var(--color-secondary);
+    border-radius: 1rem;
+}
+
+.contenedor_opciones {
+    display: grid;
+    grid-template-columns: clamp(15rem, 32vw, 42rem) clamp(15rem, 32vw, 42rem);
+    grid-template-rows: 1fr;
+    /* justify-content: space-evenly; */
+    gap:0.5rem;
+    padding: 1rem;
+}
+
+button {
+    width: 10rem;
+    height: 6rem;
+}
+
+h2 {
+    padding: 1rem;
+}
+
+.boton_crear {
+    width: clamp(6rem, 10vw, 10rem);
+    height: auto;
+    display: grid;
+    place-content: center;
+    place-items: center;
+    text-align: center;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.boton_crear:hover {
+    background-color: var(--color-primary);
+    border-radius: 0.5rem;
+    transform: scale(1.02);
+    color: var(--color-fuente);
+}
+
+.boton_crear:focus {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.img_crear {
+    width: 2rem;
+    height: auto;
+}
+
+.creando_factura {
+    margin-top: 2rem;
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/creacion_factura.css">
+    <title>Factura</title>
+</head>
+
+<body>
+
+    <div class="contenedor_panel">
+
+        <!-- Encerramos los componente de nuestro sidebar, el cual tiene opciones de redireccionamiento y manejo del logo -->
+        <section class="opcion_de_navegacion">
+            <!-- Ingresamos los botones los cuales son creamos desde cero -->
+            <div class="contenido_contacto">
+
+                <div class="subir_logo_cliente">
+                    <img src="../img/Panel de gestio/Subir logo.png" alt="">
+                    <span>Sube tu logo</span>
+                </div>
+
+                <div class="contentor_botones_sidebar">
+
+                    <dvi class="boton_inicio">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Inicio.png" alt="">
+                        <span>Inicio</span>
+                    </dvi>
+
+                    <div class="boton_habilitacion">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Img transacciones.png" alt="">
+                        <span>Habilitación Electrónica</span>
+                    </div>
+
+                    <div class="boton_transacciones">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Img habilitacion.png" alt="">
+                        <select class="selector" name="" id="">
+                            <option value="">Transacciones</option>
+                            <option value="">Canada</option>
+                            <option value="">Francia</option>
+                        </select>
+                    </div>
+
+                    <div class="boton_nomia">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Img_nomina.png" alt="">
+                        <span>Nomína Electrónica</span>
+                    </div>
+
+                    <div class="boton_reportes">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Img_reportes.png" alt="">
+                        <span>Reportes</span>
+                    </div>
+
+                    <div class="boton_contabilidad">
+                        <img class="img_botones_sidebar" src="../img/Panel de gestio/Img contabilidad.png" alt="">
+                        <span>Contabilidad</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Fin contenedor de botones -->
+        </section>
+        <!-- Fin contenedor de componentes sidebar -->
+
+        <!-- Contenedor de Header -->
+        <section class="info_clilente_empresa">
+            <h2 class="nombre_usuario">Nombre de la empresa</h2>
+            <h3>Configuració</h3>
+        </section>
+        <!-- Contenedor para la creacion de los diferentes documentos   -->
+        <section class="bienvenida">
+
+
+            <!-- Contenedor de los conponentes para poder crear los documentos principales.   -->
+            <div class="contenedor_opciones">
+
+                <div class="encabezado_factura">
+                    <h2>Nueva factura</h2>
+
+                    <div class="opciones_de_factura">
+
+                        <div class="seleccion_de_factura">
+                            <label for="">Tipo ?</label>
+                            <select class="selector" name="" id="">
+                                <option value="">Facturación electrónica</option>
+                                <option value="">Facturación POOS</option>
+                            </select>
+                        </div>
+
+                        <div class="buscar_cliente">
+                            <label for="">Clilente</label>
+                            <input type="text" placeholder="Buscar">
+                        </div>
+
+                        <div class="seleccion_fecha">
+                            <label for="">Fecha de elaboración</label>
+                            <input type="date" placeholder="Seleccion">
+                        </div>
+
+                    </div>
+                </div>
+                <div class="botones_configuracion">
+
+                    <div class="contendor_botones">
+                        <button>Configuración AUI</button>
+                        <button>Cancelar</button>
+                        <button>Guarda y enviar por email</button>
+                    </div>
+
+                    <div>
+                        <label for="">Vendedor</label>
+                        <input type="text" placeholder="Buscar">
+                    </div>
+
+                </div>
+
+
+            </div>
+
+            <div class="creando_factura">
+                <table>
+                    <tr>
+                        <th>#</th>
+                        <th>producto</th>
+                        <th>descripción</th>
+                        <th>cantidad</th>
+                        <th>valor unitario</th>
+                        <th>valor total</th>
+                    </tr>
+                    <tr>
+                        <td><span>1</span></td>
+                        <td><input type="text" placeholder="Buscar producto"></td>
+                        <td><p>descripción</p></td>
+                        <td><input type="number" placeholder="cantidad"></td>
+                        <td><input type="text" placeholder="Valor unitario" readonly></td>
+                        <td><output>0</output></td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
