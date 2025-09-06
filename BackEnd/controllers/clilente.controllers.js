@@ -45,9 +45,8 @@ export const crearEmpresa = async (req, res) => {
 // Esta es nuestra Ruta para consultarl nuestra Empresa
 export const consultaEmpresa = async (req, res) => {
   const { usuario, password } = req.body;
-  console.log("Datos recibidosen el login", req.body);
+  console.log("Datos recibidosen del login", req.body);
   
-
   try {
     
     const empresa = await Empresa.findOne({

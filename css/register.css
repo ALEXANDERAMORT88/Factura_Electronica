@@ -139,6 +139,8 @@ h4 {
 }
 
 .boton_regresar {
+    display: flex;
+    justify-content: center;
     padding-bottom: 1.5rem;
     background-color: transparent;
     border: none;
