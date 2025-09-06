@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+  const link_vista_registro = document.getElementById('link_vista_registro');
+
   // Creamos una constante que nos permita guardar la infomación
   // de una etiqueta que tiene una class llamada nombre_usuario
   const nombre_usuario = document.querySelector(".nombre_usuario");
@@ -15,4 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
     nombre_usuario.textContent = "Empresa desconocida ❌";
   }
+
+  link_vista_registro.addEventListener('click', function () {
+    window.location.href = '../../pages/creacion_factura.html'
+  })
 });
