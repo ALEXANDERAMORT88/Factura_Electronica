@@ -1,7 +1,6 @@
 import ZodEmpresaSchema from "../schemas/clilente.shema.js";
 import Empresa from "../model/empresa.model.js";
 
-
 // Esta es nuestra Ruta para crear la Empresa
 export const crearEmpresa = async (req, res) => {
   try {
@@ -32,7 +31,7 @@ export const crearEmpresa = async (req, res) => {
     const guardarEmpresa = await nuevaEmpresa.save();
 
     res.status(201).json({
-      message: "Cliente creado exitosamente ✅",
+      message: "Empresa creada exitosamente ✅",
       empresa: guardarEmpresa,
     });
     console.log("Empresa de Cliente creada 🤗");
@@ -45,10 +44,8 @@ export const crearEmpresa = async (req, res) => {
 // Esta es nuestra Ruta para consultarl nuestra Empresa
 export const consultaEmpresa = async (req, res) => {
   const { usuario, password } = req.body;
-  console.log("Datos recibidosen del login", req.body);
-  
+  console.log("Datos recibiendosen del login", req.body);
   try {
-    
     const empresa = await Empresa.findOne({
       $or: [{ email_usuario: usuario }, { numero_identificacion: usuario }],
     });
