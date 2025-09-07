@@ -3,16 +3,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Elementos del formulario para capturar y almacenar los datos ingresados por el usuario
   const formulario_registro = document.getElementById("formulario_registro");
-  const numero_identificacion = document.getElementById("numero_identificacion");
+  const numero_identificacion = document.getElementById(
+    "numero_identificacion"
+  );
   const nombre_usuario = document.getElementById("nombre_usuario");
   const numero_celular = document.getElementById("numero_celular");
   const email_usuario = document.getElementById("email_usuario");
   const confirmacion_email = document.getElementById("confirmacion_email");
   const password_ingreso = document.getElementById("password_ingreso");
-  const confirmacion_contraseña = document.getElementById("confirmacion_contraseña");
+  const confirmacion_contraseña = document.getElementById(
+    "confirmacion_contraseña"
+  );
 
   const contenedor_registro = document.getElementById("contenedor_registro");
-  const contendor_de_seleccion = document.getElementById("contendor_de_seleccion");
+  const contendor_de_seleccion = document.getElementById(
+    "contendor_de_seleccion"
+  );
+  
   const boton_compra = document.getElementById("boton_compra");
   const boton_regresar = document.getElementById("boton_regresar");
 
@@ -29,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Creamos una funcion el cual no va ayudar a manejar el evento para manejar
   //  el envio de la informacion del formulario y guardarlo en MongoDB.
-  formulario_registro.addEventListener('submit', function (event) {
+  formulario_registro.addEventListener("submit", function (event) {
     event.preventDefault();
 
     let saveNumeroIdentificacion = numero_identificacion.value;
@@ -51,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // limpiar errores antes de validar
-   [
+    [
       numero_identificacion,
       nombre_usuario,
       numero_celular,
@@ -119,21 +126,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const datosAEnviar = {
       tipoDocumento: document.getElementById("tipoDocumento").value, // Obtener el valor del select
-        numero_identificacion: saveNumeroIdentificacion,
-        nombre_usuario: nombreUsuario,
-        numero_celular: saveNumeroCelular,
-        email_usuario: saveEmailUsuario,
-        password_ingreso: contraseñaUsuario
-    }
+      numero_identificacion: saveNumeroIdentificacion,
+      nombre_usuario: nombreUsuario,
+      numero_celular: saveNumeroCelular,
+      email_usuario: saveEmailUsuario,
+      password_ingreso: contraseñaUsuario,
+    };
 
     console.log(datosAEnviar);
-    
+
     // Vamos a enviar los datos al BackEnd
     fetch("http://localhost:5000/empresa", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-      },      
+      },
       body: JSON.stringify({
         tipoDocumento: document.getElementById("tipoDocumento").value, // Obtener el valor del select
         numero_identificacion: saveNumeroIdentificacion,
@@ -151,17 +158,20 @@ document.addEventListener("DOMContentLoaded", function () {
         // Si el registro fue exitoso, guardamos el nombre en localStorage
         if (data.empresa) {
           localStorage.setItem("empresaNombre", data.empresa.nombre_usuario);
-          console.log("Guardadno en localStorage:", localStorage.getItem("empresaNombre"));
+          console.log(
+            "Guardadno en localStorage:",
+            localStorage.getItem("empresaNombre")
+          );
 
           const nombreUsuarioDOM = document.querySelector(".nombre_usuario");
           if (nombreUsuarioDOM) {
-          nombreUsuarioDOM.textContent = data.empresa.nombre_usuario;
+            nombreUsuarioDOM.textContent = data.empresa.nombre_usuario;
+          }
+          // Redirigimos al Panel de gestion
+          window.location.replace("../../pages/panel_de_gestion.html");
         }
-        // Redirigimos al Panel de gestion
-        window.location.replace("../../pages/panel_de_gestion.html");
-      }
-    })
-      
+      })
+
       .catch((error) => {
         console.error("Error:", error);
         alert("Error al registrar el cliente");
