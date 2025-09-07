@@ -5,9 +5,9 @@ const EmpresaSchema = new mongoose.Schema({
   numero_identificacion: String,
   nombre_usuario: String,
   numero_celular: String,
-  email_usuario: String,
+  email_usuario: String,  
   password_ingreso: String,
 });
 
-const Empresa = mongoose.model("Cliente", EmpresaSchema);
+const Empresa = mongoose.model("Empresa", EmpresaSchema);
 export default Empresa;
