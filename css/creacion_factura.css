@@ -77,13 +77,13 @@
 
 select {
     width: 100%;
-    max-width: 300px;
+    max-width: 18.75rem;
     background-color: var(--color-primary);
     border: none;
     border-radius: 0.5rem;
     color: var(--color-fuente);
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 17px;
+    font-size: 1.06rem;
     outline: none;
     cursor: pointer;
      /* transition: background 0.3s, transform 0.2s; */
@@ -167,4 +167,39 @@ h2 {
 
 .creando_factura {
     margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.encabezado_table {
+    height: 3rem;
+    border: solid 0.06rem black ;
+    display: grid;
+    grid-template-columns: clamp(1rem, 2.5vw, 2rem) repeat(6, clamp(6.5rem, 12.5vw, 12.5rem));
+    justify-content: center;
+    align-items: center;
+}
+
+td {
+    margin: 0.3rem;
+}
+
+.contenedor_form_crear_producto {
+    /* display: none !important; */
+}
+
+.boton_add_item {
+    width: 6.8rem;
+    height: 1.56rem;
+}
+
+.opcion_crear {
+    display: flex;
+}
+
+.selector_producto {
+    width: 1rem;
+    background-color: var(--color-secondary);
+    color: black;
 }

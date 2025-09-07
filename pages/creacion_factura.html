@@ -122,31 +122,116 @@
 
             <div class="creando_factura">
                 <table>
-                    <tr>
+                    <tr class="encabezado_table">
                         <th>#</th>
-                        <th>producto</th>
-                        <th>descripción</th>
-                        <th>cantidad</th>
-                        <th>valor unitario</th>
-                        <th>valor total</th>
+                        <th>Producto</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>
+                        <th>Valor unitario</th>
+                        <th>Valor total</th>
+                        <th>Agregar</th>
                     </tr>
-                    <tr>
+                    <tr class="encabezado_table">
                         <td><span>1</span></td>
-                        <td><input type="text" placeholder="Buscar producto"></td>
-                        <td><p>descripción</p></td>
-                        <td><input type="number" placeholder="cantidad"></td>
-                        <td><input type="text" placeholder="Valor unitario" readonly></td>
-                        <td><output>0</output></td>
+
+                        <td class="contenedor_crearProducto">
+
+                            <div class="opcion_crear">
+                                <input id="buscar_producto" type="text" placeholder="Buscar producto">
+                                <select class="selector_producto" id="">
+                                    <option value="">Crear producto</option>
+                                </select>
+                            </div>
+                        </td>
+
+                        <td>
+                            <p id="descripcion_product">descripción</p>
+                        </td>
+                        <td><input id="cantidad_producto" type="number" placeholder="cantidad"></td>
+                        <td><input id="valor_uni" type="text" placeholder="Valor unitario" readonly></td>
+                        <td><output id="total_producto">0</output></td>
+                        <td class="boton_add_item"><button class="boton_add_item">+</button></td>
                     </tr>
                 </table>
+
+
+                <div class="contenedor_form_crear_producto">
+                    <h2>Nuevo producto</h2>
+                    <div class="input_seleccion">
+                        <span>Producto <input type="checkbox" placeholder="#"></span>
+                        <span>Servicio <input type="checkbox" placeholder="#"></span>
+
+                        <form class="formulario form_crear_producto" id="form_producto" action="">
+
+                            <div class="contenedor_datos">
+
+                                <h3>Datos básicos</h3>
+
+                                <div class="datos_producto">
+                                    <div>
+                                        <label for="codigo_producto">Código</label>
+                                        <input type="text" id="codigo_producto">
+                                    </div>
+                                    <div>
+                                        <label for="nombre_producto">Nombre del Producto</label>
+                                        <input type="text" id="nombre_producto">
+                                    </div>
+                                    <div>
+                                        <label for="descripcion_producto">Descripción del producto</label>
+                                        <input type="text" id="descripcion_producto">
+                                    </div>
+                                    <div>   
+                                        <label for="valor_unitario">Valor unitario</label>
+                                        <input type="text" id="valor_unitario">
+                                    </div>
+                                    <div>
+                                        <label for="unidad">Unidad de medida factura electrónica</label>
+                                        <select class="selector" name="" id="">
+                                            <option value="">Unidad</option>
+                                            <option value="">Otra unidad</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="contenedor_tributaria">
+
+                                <div class="info_tributaria">
+
+                                    <h3>Información tributaria</h3>
+
+                                    <div>
+                                        <label for="incluido">Es incluido</label>
+                                        <input type="checkbox" id="incluido">
+                                    </div>
+
+                                    <div>
+
+                                        <label for="">Clasificación tributaria</label>
+                                        <select class="selector" name="" id="">
+                                            <option value="">Unidad</option>
+                                            <option value="">Otra unidad</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="lista_precios">
+
+                                </div>
+                                <div class="datos_adicionales">
+
+                                </div>
+                            </div>
+                            <button type="submit">Guardar</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-
         </section>
-
-
     </div>
 
-
+<script src="../js/page_js/creacion_factura.js"></script>
 
 </body>
 
